@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Icon.png";
-import Home_page from "./Home_page";
-import Client from "./Client";
-import Details from "./Details";
-import Helping from "./Helping";
-import Customer from "./Customer";
-import Caring from "./Caring";
-import Contact from "./Contact";
+
 
 export default function Navbar() {
   const navigate = [
@@ -46,7 +40,7 @@ export default function Navbar() {
         <div className="hidden sm:flex w-full justify-end gap-5 pr-12">
           {navigate.map((nav, index) => (
             <div id={index}>
-              <Link to={nav.nav}>{nav.page}</Link>
+              <li className="list-none cursor-pointer">{nav.page}</li>
             </div>
           ))}
         </div>
@@ -76,7 +70,8 @@ export default function Navbar() {
           </svg>
         </div>
       </div>
-      {menuopen && (
+
+      {/* {menuopen && (
         <div className="flex flex-col p-3 items-end ml-52 shadow-xl text-left rounded-lg  bg-white absolute animate-bounce">
           {navigate.map((nav, index) => (
             <div id={index}>
@@ -87,7 +82,7 @@ export default function Navbar() {
             Register Now
           </button>
         </div>
-      )}
+      )} */}
     </>
   );
 }
